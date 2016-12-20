@@ -1,0 +1,20 @@
+doctype html
+html(ng-app='puck', lang='en-US')
+  head
+    meta(charset='UTF-8')
+    title puck
+    link(rel='stylesheet', href='vendor/material.min.css')
+    style!= css
+  body(ng-controller='puck-controller')
+    h1(ng-click='search()') search
+    h2 {{device.name}}
+    .status
+      .name {{statusName}}
+      .val {{statusVal}}
+    script(src='vendor/angular.min.js')
+    script(src='vendor/angular-animate.min.js')
+    script(src='vendor/angular-aria.min.js')
+    script(src='vendor/angular-messages.min.js')
+    script(src='vendor/angular-material.min.js')
+    script.
+      require(require('path').join(__dirname, '..', 'lib', 'app'))
