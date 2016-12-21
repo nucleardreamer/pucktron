@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/electron index.js",
-    "test": "node_modules/.bin/standard && find test/**/*.js | xargs -n 1 node | node_modules/.bin/tap-difflet",
-    "coverage": "node node_modules/.bin/istanbul cover node_modules/.bin/tape test/**/*.js || true",
+    "test": "node_modules/.bin/standard && find test/*.js | xargs -n 1 node | node_modules/.bin/tap-difflet",
+    "coverage": "node node_modules/.bin/istanbul cover node_modules/.bin/tape test/*.js || true",
     "coveralls": "npm run-script coverage && node node_modules/.bin/coveralls < coverage/lcov.info && rm -rf coverage/ || true"
   },
   "author": "Flynn Joffray <nucleardreamer@gmail.com>",
@@ -14,12 +14,15 @@
   "dependencies": {
     "electron": "1.4.13",
     "lodash": "4.17.2",
+    "minimatch": "3.0.3",
     "pino": "3.0.5",
     "pug": "2.0.0-beta6",
-    "stylus": "0.54.5"
+    "stylus": "0.54.5",
+    "uuid": "3.0.1"
   },
   "devDependencies": {
     "coveralls": "2.11.14",
+    "electron-packager": "8.4.0",
     "istanbul": "0.4.2",
     "standard": "8.6.0",
     "tap-difflet": "0.4.0",
